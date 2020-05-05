@@ -18,6 +18,7 @@ https://nvidia.github.io/OpenSeq2Seq/
 
 ## Notes for Arvind
 docker run --gpus all -it -v ~:/data -v /dev/data:/MAILABS --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 0c7b70421b78
+python run.py --config_file=example_configs/text2speech/tacotron_gst.py --mode=infer --infer_output_file=unused --logdir=../checkpoint
 
 ## Features
 1. Models for:
