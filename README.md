@@ -16,6 +16,9 @@ building blocks for training encoder-decoder models for neural machine translati
 ## Documentation and installation instructions 
 https://nvidia.github.io/OpenSeq2Seq/
 
+## Notes for Arvind
+docker run --gpus all -it -v ~:/data -v /dev/data:/MAILABS --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 0c7b70421b78
+
 ## Features
 1. Models for:
    1. Neural Machine Translation
