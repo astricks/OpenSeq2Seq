@@ -12,7 +12,7 @@ from open_seq2seq.optimizers.lr_policies import fixed_lr, transformer_policy, ex
 base_model = Text2SpeechTacotron
 
 dataset = "LJ"
-dataset_location = "/dataset/LJSpeech-1.1" 
+dataset_location = "/data/LJSpeech-1.1" 
 output_type = "both"
 
 if dataset == "MAILABS":
