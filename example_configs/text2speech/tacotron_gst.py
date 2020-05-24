@@ -11,8 +11,8 @@ from open_seq2seq.optimizers.lr_policies import fixed_lr, transformer_policy, ex
 
 base_model = Text2SpeechTacotron
 
-dataset = "MAILABS"
-dataset_location = "/MAILABS" 
+dataset = "LJ"
+dataset_location = "/dataset/LJSpeech-1.1" 
 output_type = "both"
 
 if dataset == "MAILABS":
@@ -26,7 +26,7 @@ elif dataset == "LJ":
   mag_num_feats = 513
   train = "train_32.csv"
   val = "val_32.csv"
-  batch_size = 48
+  batch_size = 64 
 else:
   raise ValueError("Unknown dataset")
 
@@ -52,8 +52,8 @@ else:
 
 base_params = {
   "random_seed": 0,
-  "use_horovod": False,
-  "num_gpus": 2,
+  "use_horovod": True,
+  "num_gpus": 4,
   "num_epochs": 25,
 
   "batch_size_per_gpu": batch_size,
