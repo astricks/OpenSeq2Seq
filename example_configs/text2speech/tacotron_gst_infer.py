@@ -52,7 +52,7 @@ else:
 
 base_params = {
   "random_seed": 0,
-  "use_horovod": True,
+  "use_horovod": False,
   "num_gpus": 4,
   "num_epochs": 25,
 
