@@ -401,13 +401,6 @@ class Text2Speech(EncoderDecoderModel):
           predicted_final_spec = predicted_final_spec[:audio_length - 1, :]
           predicted_final_spec = self.get_data_layer().get_magnitude_spec(predicted_final_spec, is_mel=True)
           
-          # do the split here
-          mel_part_80, mag_part = np.split(
-          predicted_final_spec,
-          [80],
-          axis=1
-          )
-          torch.save(mel_part_80, "/dev/mel80channel.wav.pt") 
           wav_summary = save_audio(
               predicted_final_spec,
               self.params["logdir"],

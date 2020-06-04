@@ -11,9 +11,9 @@ from open_seq2seq.optimizers.lr_policies import fixed_lr, transformer_policy, ex
 
 base_model = Text2SpeechTacotron
 
-dataset = "LJ"
-dataset_location = "/data/LJSpeech-1.1" 
-output_type = "both"
+dataset = "MAILABS"
+dataset_location = "/dataset" 
+output_type = "mel"
 
 if dataset == "MAILABS":
   trim = True
@@ -52,7 +52,7 @@ else:
 
 base_params = {
   "random_seed": 0,
-  "use_horovod": True,
+  "use_horovod": False,
   "num_gpus": 4,
   "num_epochs": 25,
 
@@ -64,7 +64,7 @@ base_params = {
   "eval_steps": 500,
   "save_checkpoint_steps": 2500,
   "save_to_tensorboard": True,
-  "logdir": "result/tacotron-gst-8gpu",
+  "logdir": "result/tacotron-gst",
   "max_grad_norm":1.,
 
   "optimizer": "Adam",

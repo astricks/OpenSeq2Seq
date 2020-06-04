@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 if __name__ == '__main__':
-  data_root = "/MAILABS"
+  data_root = "/dataset"
   sub_dirs = ["en_US/by_book/male/elliot_miller/hunters_space",
               "en_US/by_book/male/elliot_miller/pink_fairy_book",
               "en_US/by_book/male/elliot_miller/pirates_of_ersatz",
