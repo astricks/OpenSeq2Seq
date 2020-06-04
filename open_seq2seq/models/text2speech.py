@@ -387,6 +387,9 @@ class Text2Speech(EncoderDecoderModel):
         if audio_length > 2:
           if "both" in self.get_data_layer().params["output_type"]:
             predicted_mag_spec = output_values[5][j][:audio_length - 1, :]
+            
+            # (arvind) Save the mag spectrogram
+            torch.save(predicted_mag_spec.astype(float).transpose(), "my_mag_spec.wav.pt")
             wav_summary = save_audio(
               predicted_mag_spec,
               self.params["logdir"],

@@ -13,7 +13,7 @@ base_model = Text2SpeechTacotron
 
 dataset = "MAILABS"
 dataset_location = "/dataset" 
-output_type = "mel"
+output_type = "both"
 
 if dataset == "MAILABS":
   trim = True

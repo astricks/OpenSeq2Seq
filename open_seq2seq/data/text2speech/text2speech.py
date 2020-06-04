@@ -8,7 +8,7 @@ import librosa
 import numpy as np
 import tensorflow as tf
 import pandas as pd
-
+import torch
 from six import string_types
 
 from open_seq2seq.data.data_layer import DataLayer
@@ -663,7 +663,9 @@ class Text2SpeechDataLayer(DataLayer):
     Returns:
       mag_spec: mag spec
     """
+    # (arvind) save spectrogram
     spectrogram = spectrogram.astype(float)
+    torch.save(spectrogram.transpose(), "mel_{}.wav.pt".format(str(is_mel))) 
     if self._mel or (is_mel and self._both):
       htk = True
       norm = None
